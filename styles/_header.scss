@@ -1,5 +1,4 @@
-
-
+@import "./mixin";
 
 .nav {
   position: fixed;
@@ -9,43 +8,78 @@
 
   // Header
   &_header {
-    padding: 1rem;
+    padding: 0.5rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: $primary-color;
+  
   }
 
   // Logo
   &_logo a {
     font-size: 1.25rem;
     font-weight: 800;
-     color: $white;
+    color: $white;
     white-space: nowrap;
+  }
+  .logo_span {
+    display: none;
   }
 
   // Menu Btn
-  font-size: 1.5rem;
-  color: $white;
-  cursor: pointer;
+  &_menu_btn {
+    font-size: 1.5rem;
+    color: $white;
+    cursor: pointer;
+    display: none;
+  }
 
   // Links
   &_links {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
     display: flex;
+    flex-direction: column;
     align-items: center;
     gap: 2rem;
     padding: 2rem;
-  }
+    z-index: -1;
 
+    &.open {
+      transform: translate(100%);
+    }
+  }
 
   // Responsive Design
   @include respond(md) {
-   &_header {
-    background-color: transparent;
-   }
+    padding: 1rem;
+    margin-inline: auto;
+    &_header {
+      background-color: transparent ;
+    }
 
-   &_logo a {
-    color: $text-dark;
-   }
+    &_logo a {
+      display: none;
+    }
+
+    &_links {
+    position: static;
+    flex-direction: row;
+    background-color: transparent;
+    padding: 0;
+     a {
+        color: $text-light;
+     }
+    }
+    .logo_span {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: $white;
+      color: $secondary-color;
+      display: block;
+    }
   }
 }
