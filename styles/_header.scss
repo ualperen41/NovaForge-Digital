@@ -1,0 +1,51 @@
+
+
+
+.nav {
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  top: 0;
+
+  // Header
+  &_header {
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $primary-color;
+  }
+
+  // Logo
+  &_logo a {
+    font-size: 1.25rem;
+    font-weight: 800;
+     color: $white;
+    white-space: nowrap;
+  }
+
+  // Menu Btn
+  font-size: 1.5rem;
+  color: $white;
+  cursor: pointer;
+
+  // Links
+  &_links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+  }
+
+
+  // Responsive Design
+  @include respond(md) {
+   &_header {
+    background-color: transparent;
+   }
+
+   &_logo a {
+    color: $text-dark;
+   }
+  }
+}
