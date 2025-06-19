@@ -19,14 +19,15 @@ html, body {
   position: fixed;
   width: 100%;
   z-index: 1000;
-  top: 0;
 }
 .nav_header {
-  padding: 0.5rem;
+  padding: 0.75rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: #ff8906;
+  max-width: 1200px;
+  margin: 0 auto !important;
 }
 .nav_logo a {
   font-size: 1.25rem;
@@ -41,7 +42,6 @@ html, body {
   font-size: 1.5rem;
   color: #ffffff;
   cursor: pointer;
-  display: none;
 }
 .nav_links {
   position: absolute;
@@ -52,11 +52,22 @@ html, body {
   flex-direction: column;
   align-items: center;
   gap: 2rem;
-  padding: 2rem;
+  padding: 2rem !important;
+  background-color: #ff8906;
+  transform: translate(-100%);
   z-index: -1;
+  transition: all 0.5s ease;
 }
 .nav_links.open {
-  transform: translate(100%);
+  transform: translateY(100%);
+}
+.nav_links a {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #ffffff;
+}
+.nav_btns {
+  display: none;
 }
 @media (min-width: 768px) {
   .nav {
@@ -64,6 +75,7 @@ html, body {
     margin-inline: auto;
   }
   .nav_header {
+    padding: 1rem;
     background-color: transparent;
   }
   .nav_logo a {
@@ -74,9 +86,14 @@ html, body {
     flex-direction: row;
     background-color: transparent;
     padding: 0;
+    transform: none !important;
   }
   .nav_links a {
     color: #767268;
+  }
+  .nav_btns {
+    display: block;
+    white-space: nowrap;
   }
   .nav .logo_span {
     font-size: 1.25rem;
