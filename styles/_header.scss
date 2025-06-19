@@ -4,6 +4,7 @@
   position: fixed;
   width: 100%;
   z-index: 1000;
+  
  
 
   // Header
@@ -46,9 +47,9 @@
     flex-direction: column;
     align-items: center;
     gap: 2rem;
-    padding: 2rem !important;
+    padding: 2rem ;
     background-color: $primary-color;
-    transform: translate(-100%) ;
+    transform: translateY(-100%) ;
     z-index: -1;
     transition: all 0.5s ease;
 
@@ -64,6 +65,7 @@
   }
 &_btns {
   display: none;
+  white-space: nowrap;
 }
   // Responsive Design
   @include respond(md) {
@@ -92,7 +94,7 @@
 
 &_btns {
   display: block;
-  white-space: nowrap;
+ 
 }
 
     .logo_span {
