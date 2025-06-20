@@ -1,0 +1,35 @@
+.portfolio {
+    background-color: $extra-light;
+    overflow: hidden;
+
+    //Header
+    &_header {
+        display: grid;
+        gap: 2rem;
+        margin-bottom: 4rem;
+
+        @include respond(md) {
+            grid-template-columns: repeat(2, 1fr);
+            h2 {
+                text-align: left;
+            }
+        }
+
+        p {
+            font-size: 1rem;
+            font-weight: 500;
+            color: $text-light;
+            line-height: 1.5rem;
+        }
+    }
+
+    //Content
+    &_content {
+        display: grid;
+        gap: 2rem;
+
+        @include respond(md) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}

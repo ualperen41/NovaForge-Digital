@@ -1,4 +1,4 @@
-@import "./mixin";
+
 
 .nav {
   position: fixed;
@@ -34,7 +34,6 @@
     font-size: 1.5rem;
     color: $white;
     cursor: pointer;
-   
   }
 
   // Links
@@ -69,7 +68,7 @@
 }
   // Responsive Design
   @include respond(md) {
-    padding: 1rem;
+   position: static;
     margin-inline: auto;
     &_header {
       padding: 1rem;
